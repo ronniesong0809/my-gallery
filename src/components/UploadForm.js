@@ -20,11 +20,14 @@ const UploadForm = () => {
   };
 
   return (
-    <div className="title m-2">
-      <form>
-        <input type="file" onChange={changeHandler} />
-        {error && <div className="error">{error}</div>}
-        {file && <div className="file">{file.name}</div>}
+    <div className="title m-5">
+      <form className="m-auto text-center">
+        <label>
+          <input type="file" onChange={changeHandler} hidden/>
+          <span className="text-6xl text-blue-600 hover:text-opacity-50">+</span>
+        </label>
+        {error && <div className="error text-red-400">{error}</div>}
+        {file && <div className="file text-blue-700">{file.name}</div>}
         {file && <ProgressBar file={file} setFile={setFile} />}
       </form>
     </div>
