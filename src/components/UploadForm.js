@@ -33,4 +33,5 @@ const UploadForm = () => {
     </div>
   );
 };
+
 export default UploadForm;
