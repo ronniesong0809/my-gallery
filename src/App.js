@@ -4,7 +4,7 @@ import ImageGrid from "./components/ImageGrid";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App m-auto max-w-7xl">
       <Title />
       <UploadForm />
       <ImageGrid />

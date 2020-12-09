@@ -5,11 +5,11 @@ const ImageGrid = () => {
   const { docs } = useFirestore("images");
 
   return (
-    <div>
+    <div className="img-grid mx-5 my-auto grid grid-cols-4 gap-10">
       {docs &&
         docs.map(doc => (
-          <div key={doc.id}>
-            <img src={doc.url} alt={doc.id} />
+          <div className="img-wrap overflow-hidden h-0 p-s-50 relative opacity-80" key={doc.id}>
+            <img className=" min-w-full min-h-full max-w-150 absolute top-0 left-0" src={doc.url} alt={doc.id} />
           </div>
         ))}
     </div>
