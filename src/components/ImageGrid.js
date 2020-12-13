@@ -13,11 +13,14 @@ const ImageGrid = ({ setSelectedImg }) => {
             className="relative p-100 opacity-80"
             key={doc.id}
             onClick={() => setSelectedImg(doc.url)}
-            whileHover={{ opacity: 1 }}
             layout
-          >
+            whileHover={{ opacity: 1, scale: 1.1 }}
+            whileTap={{
+              scale: 0.9,
+              borderRadius: "50%"
+            }}>
             <motion.img
-              className="w-full h-full object-cover absolute top-0 left-0"
+              className="w-full h-full object-cover absolute top-0 left-0 rounded"
               src={doc.url}
               alt={doc.id}
               initial={{ opacity: 0 }}
