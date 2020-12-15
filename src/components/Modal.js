@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 
 const Modal = ({ selectedImg, setSelectedImg }) => {
   const clickHandler = e => {
-    setSelectedImg(null);
+    if (e.target.classList.contains("backdrop")) {
+      setSelectedImg(null);
+    }
   };
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-full h-full bg-black-50 p-10"
+      className="backdrop fixed top-0 left-0 w-full h-full bg-black-50 p-10"
       onClick={clickHandler}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}>
